@@ -22,7 +22,7 @@ ONBUILD ADD /artifacts /application-entity/artifacts
 
 LABEL RUN docker run -it --rm --privileged --net=host -v /run:/run -v /:/host --name NAME -e NAME=NAME -e IMAGE=IMAGE IMAGE -v run /atomicapp
 LABEL STOP docker run -it --rm --privileged --net=host -v /run:/run -v /:/host --name NAME -e NAME=NAME -e IMAGE=IMAGE IMAGE -v stop /atomicapp
-LABEL INSTALL docker run -it --rm --privileged --net=host -v /run:/run -v /:/host --name NAME -e NAME=NAME -e IMAGE=IMAGE IMAGE -v install --path /atomicapp /application-entity
+LABEL INSTALL docker run -it --rm --privileged --net=host -v /run:/run -v /:/host --name NAME -e NAME=NAME -e IMAGE=IMAGE IMAGE -v install --destination /atomicapp /application-entity
 
 ENTRYPOINT ["/usr/bin/atomicapp"]
 
